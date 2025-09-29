@@ -1,7 +1,7 @@
 /* 1180 Beecrowd: "Faça um programa que leia um valor N. Este N será o tamanho de um vetor X[N].
 * A seguir, leia cada um dos valores de X, encontre o menor elemento deste vetor
 * e a sua posição dentro do vetor, mostrando esta informação.""
-Essa versão usa ponteiros e alocação dinâmica*/
+Esta versão usa ponteiros e alocação dinâmica */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,4 +36,5 @@ int main() {
     free(X);
 
     return 0;
+
 }
