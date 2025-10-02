@@ -1,3 +1,5 @@
+/* #1068 Beecrowd: Balanço de Parênteses I (versão com pilha e vetor) */
+
 #include <stdio.h>
 
 int balanceada(char s[]) {
