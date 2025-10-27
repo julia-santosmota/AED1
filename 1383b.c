@@ -68,46 +68,55 @@ void liberar_sudoku(int **sudoku) {
     free(sudoku); // Libera o array de ponteiros para as linhas
 }
 
+#include <stdio.h>
+#include <stdlib.h>
+
 
 int main() {
     int n_instancias;
     scanf("%d", &n_instancias);
 
     for (int k = 1; k <= n_instancias; k++) {
-                
-        int **sudoku; // Declara como ponteiro para ponteiro
+        
+        int **sudoku; 
 
         // aloca memória para 9 ponteiros (um para cada linha)
         sudoku = (int **)malloc(9 * sizeof(int *));
         if (sudoku == NULL) {
-             fprintf(stderr, "Erro de alocacao de memoria (ponteiros de linha)!\n");
-             return 1; // Ou exit(1);
+             // MUDANÇA 1: Usando printf simples
+             printf("Erro de alocacao de memoria (ponteiros de linha)!\n"); 
+             return 1; 
         }
 
         // aloca memória para cada linha (9 inteiros por linha)
         for (int i = 0; i < 9; i++) {
             sudoku[i] = (int *)malloc(9 * sizeof(int));
             if (sudoku[i] == NULL) {
-                 fprintf(stderr, "Erro de alocacao de memoria (linha %d)!\n", i);
+                 // MUDANÇA 2: Usando printf simples
+                 printf("Erro de alocacao de memoria (linha %d)!\n", i); 
+                 
                  // Liberar memória já alocada antes de sair (importante)
                  for(int j = 0; j < i; j++) {
                      free(sudoku[j]);
                  }
                  free(sudoku);
-                 return 1; // Ou exit(1);
+                 return 1; 
             }
         }
-
+        
+        // leitura do tabuleiro
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 scanf("%d", &sudoku[i][j]);
             }
         }
 
+        // verificando usando as funções
         int valido_linhas = verifica_linhas(sudoku);
         int valido_colunas = verifica_colunas(sudoku);
         int valido_blocos = verifica_blocos(sudoku);
         
+        // resultado
         printf("Instancia %d\n", k);
         if (valido_linhas && valido_colunas && valido_blocos) {
             printf("SIM\n");
@@ -115,7 +124,7 @@ int main() {
             printf("NAO\n");
         }
         
-        // Liberação da Memória Dinâmica
+        // liberando a memória
         liberar_sudoku(sudoku);
 
         printf("\n"); 
@@ -123,8 +132,6 @@ int main() {
 
     return 0;
 }
-
-
 
 /*
   Diferenças entre alocação a Estática vs. Dinâmica (Matriz Sudoku):
