@@ -1,8 +1,7 @@
 #include <stdio.h>
 
-#define MAX 255 // N vai até 250, usamos um pouco a mais
-#define INF 100000000 // Um valor muito alto para representar infinito
-
+#define MAX 255 
+#define INF 100000000
 int Grafo[MAX][MAX];
 int dist[MAX];
 int visitado[MAX];
