@@ -33,7 +33,8 @@ int main() {
                 if (stack[topo-1] != vagaoDesejado) {
                     ok = 0;
                     break;
-                } else {
+                } 
+                else {
                     topo--;
                 }
             }
