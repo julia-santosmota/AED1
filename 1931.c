@@ -4,7 +4,7 @@
 #define INFINITO 1000000000
 #define MAX_CIDADES 10005
 #define MAX_ESTRADAS 100005 
-#define TAM_FILA 1000000 
+#define TAM_FILA 1000000 // Tamanho generoso para a fila circular
 
 typedef struct {
     int destino;
@@ -64,6 +64,7 @@ int main() {
         adicionar_estrada(v, u, custo);
     }
 
+    
     int dist[MAX_CIDADES][2];
     
     int na_fila[MAX_CIDADES][2];
