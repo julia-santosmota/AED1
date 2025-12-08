@@ -1,3 +1,8 @@
+/*
+Beecrowd 1128: Ir e vir
+assuntos: grafos -> dfs
+*/
+
 #include <stdio.h>
 
 #define MAX 2005 // Tamanho máximo N + margem de segurança
