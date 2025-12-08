@@ -9,7 +9,8 @@ int balanceada(char s[]) {
     for (int i = 0; s[i] != '\0'; i++) {
         if (s[i] == '(') { // push / empilha '('
             pilha[++topo] = '(';
-        } else if (s[i] == ')') { // pop / desempilha
+        } 
+        else if (s[i] == ')') { // pop / desempilha
             if (topo == -1) {
                 return 0;
             }
