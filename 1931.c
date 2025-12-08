@@ -4,7 +4,7 @@
 #define INFINITO 1000000000
 #define MAX_CIDADES 10005
 #define MAX_ESTRADAS 100005 
-#define TAM_FILA 1000000 // Tamanho generoso para a fila circular
+#define TAM_FILA 1000000 
 
 typedef struct {
     int destino;
