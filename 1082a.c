@@ -1,3 +1,8 @@
+/*
+Beecrowd 1082: Componentes Conexos
+assuntos: grafos com matriz de addjacência, grafos conexos, dfs
+*/
+
 #include <stdio.h>
 #include <string.h>
 
