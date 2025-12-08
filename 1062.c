@@ -1,3 +1,8 @@
+/* 
+Beecrowd 1062: Trilhos
+assuntos: pilhas
+*/
+
 #include <stdio.h>
 
 #define MAX 1005
