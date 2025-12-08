@@ -1,3 +1,8 @@
+/*
+1081 Beecrowd: DFSr - Hierarquia de Profundidade
+assuntos: grafos com matriz de adjacência e dfs
+*/
+
 #include <stdio.h>
 #include <string.h>
 
