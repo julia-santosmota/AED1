@@ -1,14 +1,11 @@
 #include <stdio.h>
 
 #define MAXID 100000
-
 int saiu[MAXID + 1];
 
 int main() {
     int N, M;
-
     scanf("%d", &N);
-
     int fila[N];
 
     for (int i = 0; i < N; i++) {
@@ -17,9 +14,10 @@ int main() {
 
     scanf("%d", &M);
 
-    for (int i = 0; i <= MAXID; i++)
+    for (int i = 0; i <= MAXID; i++) {
         saiu[i] = 0;
-
+    }
+    
     for (int i = 0; i < M; i++) {
         int id;
         scanf("%d", &id);
