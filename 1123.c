@@ -1,3 +1,8 @@
+/*
+Beecrowd 1123: Desvios de rota
+assuntos: grafos, algoritmo de dijkstra
+*/
+
 #include <stdio.h>
 
 #define MAX 255 
