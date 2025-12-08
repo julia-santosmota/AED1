@@ -1,3 +1,8 @@
+/*
+1076 Beecrowd: Desenhando Labirintos
+assuntos: grafos
+*/
+
 #include <stdio.h>
 
 int main() {
