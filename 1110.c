@@ -1,3 +1,8 @@
+/*
+Beecrowd 1110: Jogando cartas fora
+assuntos: filas
+*/
+
 #include <stdio.h>
 
 int main() {
