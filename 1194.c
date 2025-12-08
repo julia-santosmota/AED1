@@ -1,32 +1,50 @@
 #include <stdio.h>
 #include <string.h>
 
-void posfix(char prefixo[], char infixo[], int preStart, int preEnd, int inStart, int inEnd) {
-    if (preStart > preEnd || inStart > inEnd) return;
-
-    char raiz = prefixo[preStart];
-
-    int raizIdx;
-    for (raizIdx = inStart; raizIdx <= inEnd; raizIdx++) {
-        if (infixo[raizIdx] == raiz) break;
+void posfixo(char prefixo[], char infixo[], int preInicio, int preFim, int inInicio, int inFim) {
+    if (preInicio > preFim || inInicio > inFim) {
+        return;
     }
 
-    int tamEsq = raizIdx - inStart; 
+    char raiz = prefixo[preInicio];
 
-    posfix(prefixo, infixo, preStart+1, preStart+tamEsq, inStart, raizIdx-1);
-    posfix(prefixo, infixo, preStart+tamEsq+1, preEnd, raizIdx+1, inEnd);
+    int posRaiz;
+    for (posRaiz = inInicio; posRaiz <= inFim; posRaiz++) {
+        if (infixo[posRaiz] == raiz) {
+            break;
+        }
+    }
+
+    int tamEsquerda = posRaiz - inInicio;
+
+    posfixo(prefixo, infixo, 
+            preInicio + 1,                 
+            preInicio + tamEsquerda,      
+            inInicio,                       
+            posRaiz - 1);               
+
+    posfixo(prefixo, infixo,
+            preInicio + tamEsquerda + 1,    
+            preFim,                         
+            posRaiz + 1,                 
+            inFim);                       
+
     printf("%c", raiz);
 }
 
 int main() {
-    int C;
+    int C; 
     scanf("%d", &C);
-    while(C--) {
-        int N;
-        char prefixo[55], infixo[55]; 
+    
+    while (C--) {
+        int N;  
+        char prefixo[55], infixo[55];
+        
         scanf("%d %s %s", &N, prefixo, infixo);
-        posfix(prefixo, infixo, 0, N-1, 0, N-1);
+        
+        posfixo(prefixo, infixo, 0, N - 1, 0, N - 1);
         printf("\n");
     }
+    
     return 0;
 }
