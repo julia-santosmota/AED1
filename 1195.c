@@ -26,28 +26,36 @@ node* inserir(node *raiz, int numero) {
 }
 
 void prefixo(node *raiz) {
-    if (raiz == NULL) return;
+    if (raiz == NULL) {
+        return;
+    }
     printf(" %d", raiz->numero);
     prefixo(raiz->esq);
     prefixo(raiz->dir);
 }
 
 void infixo(node *raiz) {
-    if (raiz == NULL) return;
+    if (raiz == NULL) {
+        return;
+    }
     infixo(raiz->esq);
     printf(" %d", raiz->numero);
     infixo(raiz->dir);
 }
 
 void posfixo(node *raiz) {
-    if (raiz == NULL) return;
+    if (raiz == NULL) {
+        return;
+    }
     posfixo(raiz->esq);
     posfixo(raiz->dir);
     printf(" %d", raiz->numero);
 }
 
 void liberar(node *raiz) {
-    if (!raiz) return;
+    if (raiz == 0) {
+        return;
+    }
     liberar(raiz->esq);
     liberar(raiz->dir);
     free(raiz);
@@ -56,7 +64,9 @@ void liberar(node *raiz) {
 int main() {
     int C, N, numero;
 
-    if (scanf("%d", &C) != 1) return 0;
+    if (scanf("%d", &C) != 1) {
+        return 0;
+    }
 
     for (int caso = 1; caso <= C; caso++) {
         node *raiz = NULL;
