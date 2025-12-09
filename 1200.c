@@ -16,8 +16,7 @@ Node* novoNode(char elemento) {
 
 Node* inserir(Node* raiz, char elemento) {
     if (raiz == NULL) {
-        
-    return novoNode(elemento);
+        return novoNode(elemento);
     }
     if (elemento < raiz->elemento) {
         raiz->esq = inserir(raiz->esq, elemento);
@@ -30,8 +29,7 @@ Node* inserir(Node* raiz, char elemento) {
 
 int buscar(Node* raiz, char elemento) {
     if (raiz == NULL){
-        
-    return 0;
+        return 0;
     }
     if (raiz->elemento == elemento) {
         return 1;
@@ -39,13 +37,17 @@ int buscar(Node* raiz, char elemento) {
     if (elemento < raiz->elemento) {
         return buscar(raiz->esq, elemento);
     }
-    else return buscar(raiz->dir, elemento);
+    else {
+        return buscar(raiz->dir, elemento);
+    }
 }
 
 void infixa(Node* raiz, int *primeiro) {
     if (raiz != NULL) {
         infixa(raiz->esq, primeiro);
-        if (!*primeiro) printf(" ");
+        if (*primeiro == 0) {
+            printf(" ");
+        }
         printf("%c", raiz->elemento);
         *primeiro = 0;
         infixa(raiz->dir, primeiro);
@@ -91,8 +93,9 @@ int main() {
             if (buscar(raiz, c)){
                 printf("%c existe\n", c);
             }
-            else
+            else {
                 printf("%c nao existe\n", c);
+            }
         }
         
         else if (strcmp(command, "INFIXA") == 0) {
