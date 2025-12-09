@@ -29,7 +29,9 @@ int main() {
             printf(" -> \\\n");
         }
 
-        if (N > 0) printf("\n");
+        if (N > 0) {
+            printf("\n");
+        }
     }
 
     return 0;
