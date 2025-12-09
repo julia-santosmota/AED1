@@ -1,3 +1,8 @@
+/* 
+Beecrowd 1047
+assuntos: entrada e saída em c++
+*/
+
 #include <iostream>
 using namespace std;
 
